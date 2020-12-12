@@ -105,7 +105,7 @@ void UBullCowCartridge::ProcessGuess(const FString& Guess) {
             }
             else {
                 // Calculate bull and cow
-                CalcBullCow(*Guess);
+                CalcBullCow(*Guess, NumBull, NumCow);
 
                 // Print bull and cow
                 PrintLine(TEXT("It is Incorrect!"));
@@ -142,6 +142,7 @@ void UBullCowCartridge::CalcBullCow(const FString& Guess, int32& CalcBull, int32
                 else {
                     ++CalcCow;
                 }
+                break; // this break out of the loop when found a bull or cow
             }
         }
     }
